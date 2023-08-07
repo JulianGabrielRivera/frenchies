@@ -84,7 +84,7 @@ export const Home = () => {
   }, [isInView, isInView2]);
   return (
     <>
-      <div className="h-screen w-11/12 ">
+      <div className="h-screen w-full ">
         <div className="relative">
           <video src={videoBg} autoPlay loop muted className="relative" />
           <h1 className="absolute bottom-0 right-4 text-white font-bold text-xl">
