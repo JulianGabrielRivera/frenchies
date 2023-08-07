@@ -132,7 +132,7 @@ export const Home = () => {
             }}
             initial="hidden"
             animate={mainControls2}
-            transition={{ ease: "easeOut", duration: 2 }}
+            transition={{ ease: "easeOut", duration: 3 }}
             className="flex-1"
           >
             <img
@@ -173,7 +173,7 @@ export const Home = () => {
             }}
             initial="hidden"
             animate={mainControls}
-            transition={{ ease: "easeOut", duration: 2 }}
+            transition={{ ease: "easeOut", duration: 3 }}
             className="flex-1"
           >
             <img
@@ -188,7 +188,7 @@ export const Home = () => {
         </div>
         <h2 className="mx-3 text-2xl text-white mt-8">My puppies...</h2>
         <section
-          className=" grid grid-cols-3 grid-rows-2 gap-4 m-3  sm:grid-rows-3 sm:grid-cols-4 md:grid-rows-2 md:grid-cols-4 lg:grid-cols-6 lg:grid-rows-1"
+          className=" grid grid-cols-3 grid-rows-2 gap-4 m-3  sm:grid-rows-3 sm:grid-cols-4 md:grid-rows-2 md:grid-cols-4 lg:grid-cols-6 lg:grid-rows-1 xl:grid-rows-1"
           ref={ref2}
         >
           {puppyArray.map((pup, index) => {
