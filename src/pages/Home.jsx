@@ -109,7 +109,7 @@ export const Home = () => {
             </Link>
           </nav>
         )}
-        <div className="md:flex md:flex-row-reverse mt-6">
+        <div className="md:flex md:flex-row-reverse mt-20">
           <div className="flex-1">
             <h2 className="mx-3 text-2xl text-white mt-6">
               Find a frenchie...
@@ -143,13 +143,13 @@ export const Home = () => {
           </motion.div>
         </div>
 
-        <div className="mx-3 mt-6">
-          <hr />
-          {/* <button className="bg-customGreen flex justify-center h-12 items-center text-white w-full">
+        {/* <div className="mx-3 mt-6">
+          <hr /> */}
+        {/* <button className="bg-customGreen flex justify-center h-12 items-center text-white w-full">
             See my pups
           </button> */}
-        </div>
-        <div className="md:flex md:flex-row md:justify-between">
+        {/* </div> */}
+        <div className="md:flex md:flex-row md:justify-between mt-20">
           <div className="flex-1">
             <h2 className="mx-3 text-2xl text-white mt-8">About me...</h2>
             <p className="mx-3 text-white mt-4 leading-8 " ref={ref3}>
@@ -183,37 +183,39 @@ export const Home = () => {
             />
           </motion.div>
         </div>
-        <div className="mx-3 mt-6">
+        {/* <div className="mx-3 mt-6">
           <hr />
+        </div> */}
+        <div className="mt-20">
+          <h2 className="mx-3 text-2xl text-white mt-8">My puppies...</h2>
+          <section
+            className=" grid grid-cols-3 grid-rows-2 gap-4 m-3  sm:grid-rows-3 sm:grid-cols-4 md:grid-rows-2 md:grid-cols-4 lg:grid-cols-6 lg:grid-rows-1 xl:grid-rows-1"
+            ref={ref2}
+          >
+            {puppyArray.map((pup, index) => {
+              return (
+                <>
+                  <motion.article
+                    className="bg-customGreen"
+                    key={index}
+                    variants={fadeInAnimationVariants}
+                    initial="initial"
+                    whileInView="animate"
+                    custom={index}
+                  >
+                    <img
+                      src={pup.img}
+                      className="h-36 w-80 sm:h-40 md:h-60 lg:h-44 xl:h-60 object-cover"
+                    />
+                    <h1 className="text-white">{pup.name}</h1>
+                    <p className="text-sm text-white">French Bulldog</p>
+                    <p>15 weeks</p>
+                  </motion.article>
+                </>
+              );
+            })}
+          </section>
         </div>
-        <h2 className="mx-3 text-2xl text-white mt-8">My puppies...</h2>
-        <section
-          className=" grid grid-cols-3 grid-rows-2 gap-4 m-3  sm:grid-rows-3 sm:grid-cols-4 md:grid-rows-2 md:grid-cols-4 lg:grid-cols-6 lg:grid-rows-1 xl:grid-rows-1"
-          ref={ref2}
-        >
-          {puppyArray.map((pup, index) => {
-            return (
-              <>
-                <motion.article
-                  className="bg-customGreen"
-                  key={index}
-                  variants={fadeInAnimationVariants}
-                  initial="initial"
-                  whileInView="animate"
-                  custom={index}
-                >
-                  <img
-                    src={pup.img}
-                    className="h-36 w-80 sm:h-40 md:h-60 lg:h-44 xl:h-60 object-cover"
-                  />
-                  <h1 className="text-white">{pup.name}</h1>
-                  <p className="text-sm text-white">French Bulldog</p>
-                  <p>15 weeks</p>
-                </motion.article>
-              </>
-            );
-          })}
-        </section>
       </div>
     </>
   );
