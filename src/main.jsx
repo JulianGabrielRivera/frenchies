@@ -3,11 +3,12 @@ import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { BrowserRouter } from "react-router-dom";
+import { ScrollDownProvider } from "./context/scrollDown.context.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
+  <BrowserRouter>
+    <ScrollDownProvider>
       <App />
-    </BrowserRouter>
-  </React.StrictMode>
+    </ScrollDownProvider>
+  </BrowserRouter>
 );

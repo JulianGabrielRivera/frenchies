@@ -13,6 +13,14 @@ export default {
         customGreen: "rgb(0, 161, 82)",
         customDarkMode: "#242424",
       },
+      height: {
+        450: "450px",
+      },
+      width: {
+        "95vw": "95vw",
+        "70vw": "80vw",
+        "40vw": "50vw",
+      },
     },
   },
   plugins: [],

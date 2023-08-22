@@ -8,7 +8,7 @@ import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSquareCaretDown } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
-import { useState, useRef, useEFfect, useEffect } from "react";
+import { useState, useRef, useEFfect, useEffect, useContext } from "react";
 import {
   motion,
   useInView,
@@ -17,6 +17,8 @@ import {
   useTransform,
   animate,
 } from "framer-motion";
+import { ScrollContext } from "../context/scrollDown.context.jsx";
+
 library.add(faSquareCaretDown);
 
 export const Home = () => {
@@ -25,6 +27,9 @@ export const Home = () => {
   const ref2 = useRef(null);
   const ref3 = useRef(null);
   const ref4 = useRef(null);
+
+  const { scrollRef, navClick } = useContext(ScrollContext);
+
   const handlePuppiesClick = () => {
     ref2.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -151,8 +156,10 @@ export const Home = () => {
         {/* </div> */}
         <div className="md:flex md:flex-row md:justify-between mt-20">
           <div className="flex-1">
-            <h2 className="mx-3 text-2xl text-white mt-8">About me...</h2>
-            <p className="mx-3 text-white mt-4 leading-8 " ref={ref3}>
+            <h2 ref={scrollRef} className="mx-3 text-2xl text-white mt-8">
+              About me...
+            </h2>
+            <p className="mx-3 text-white mt-4 leading-8 ">
               Hi everyone! I am a hobby Frenchie breeder. I absolutely love my
               frenchies they are my children so I don’t believe in forced
               breeding. It’s totally up to my females whether they choose to
@@ -195,22 +202,24 @@ export const Home = () => {
             {puppyArray.map((pup, index) => {
               return (
                 <>
-                  <motion.article
-                    className="bg-customGreen"
-                    key={index}
-                    variants={fadeInAnimationVariants}
-                    initial="initial"
-                    whileInView="animate"
-                    custom={index}
-                  >
-                    <img
-                      src={pup.img}
-                      className="h-36 w-80 sm:h-40 md:h-60 lg:h-44 xl:h-60 object-cover"
-                    />
-                    <h1 className="text-white">{pup.name}</h1>
-                    <p className="text-sm text-white">French Bulldog</p>
-                    <p>15 weeks</p>
-                  </motion.article>
+                  <Link to={`/puppy-details/${index}`}>
+                    <motion.article
+                      className="bg-customGreen"
+                      key={index}
+                      variants={fadeInAnimationVariants}
+                      initial="initial"
+                      whileInView="animate"
+                      custom={index}
+                    >
+                      <img
+                        src={pup.img}
+                        className="h-36 w-80 sm:h-40 md:h-60 lg:h-44 xl:h-60 object-cover"
+                      />
+                      <h1 className="text-white">{pup.name}</h1>
+                      <p className="text-sm text-white">French Bulldog</p>
+                      <p>15 weeks</p>
+                    </motion.article>
+                  </Link>
                 </>
               );
             })}
