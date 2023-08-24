@@ -57,7 +57,7 @@ export const PuppyDetails = () => {
         <div className="w-2/5 flex flex-col justify-center align-middle">
           <h2 className="flex  justify-center text-white">Frenchies</h2>
         </div>
-        <div className="flex justify-around w-2/5 items-center ">
+        <div className="flex justify-around w-6/12 items-center ">
           <Link to="/ " className="no-underline text-white">
             Home
           </Link>
@@ -69,7 +69,7 @@ export const PuppyDetails = () => {
       </nav>
       {
         <>
-          <div className="flex flex-col justify-around mt-10 items-center   ">
+          <div className="flex flex-col justify-around mt-10 items-center">
             <div className="flex flex-col lg:flex-row text-white justify-between md:justify-around w-11/12 mt-8">
               <div className="flex flex-col-reverse md:flex-row justify-center gap-3 lg:visible">
                 <div className="flex md:flex-col gap-2 lg:visible">
@@ -110,11 +110,15 @@ export const PuppyDetails = () => {
                   //   style={{ height: "450px", width: "95vw" }}
                 />
               </div>
-              <section className="flex flex-col w-2/5 md:mt-10 lg:mt-0 gap-3 lg:mx-5">
-                <p className=" text-4xl  sm:text-left  ">
+
+              <section className="flex flex-col w-5/5 md:mt-10 lg:mt-0 gap-3 lg:mx-5">
+                <p className=" text-3xl mt-10 sm:text-left  ">
                   {pup && pup[0].name}
                 </p>
-                <p className="">Male</p>
+                <article className="flex justify-between w-11/12">
+                  <p className="">Male</p>
+                  <p>$4000</p>
+                </article>
                 <div className="flex flex-col gap-3 ">
                   <br></br>
                   <p>{pup && pup[0].type}</p>
@@ -122,17 +126,20 @@ export const PuppyDetails = () => {
                   <p>Vet Checked</p>
                   <p>Shots up to date</p>
                 </div>
-                <div className="flex flex-col w-2/3  justify-between rounded-xl">
+                {/* <hr /> */}
+                {/* <div className="flex flex-col w-2/3  justify-between rounded-xl">
+                  <p className="text-2xl">Personality Traits of Zeus</p>
                   {pup && <ProgressBar pup={pup} />}
-                </div>
+                </div> */}
               </section>
             </div>
 
             <hr className="mt-10 ml-5 mr-5" />
           </div>
-
           <section className="flex flex-col justify-center items-center  ">
-            <h1 className="text-2xl text-white w-11/12">About Zeus</h1>
+            <hr className="mt-10 ml-5 mr-5 w-11/12" />
+
+            <h1 className="text-2xl text-white w-11/12 mt-10">About Zeus</h1>
             <p className="text-white mt-10 w-11/12">
               Meet Max, the epitome of tranquility and canine charm. Max is the
               embodiment of a good boy, his gentle disposition and serene
@@ -149,9 +156,17 @@ export const PuppyDetails = () => {
               moments with a beloved and endearing friend.
             </p>
           </section>
+          <hr className="mt-10 ml-5 mr-5" />
 
-          <section className="mt-10 flex flex-col justify-center items-center">
+          <section className="flex flex-col w-screen justify-center items-center rounded-xl text-white mt-10">
+            <p className="text-2xl w-11/12">Personality Traits of Zeus</p>
+            {pup && <ProgressBar pup={pup} />}
+          </section>
+
+          <section className="mt-10 flex flex-col justify-center items-center text-white ">
             <h1 className="text-2xl text-white w-11/12">Contact Me</h1>
+            <p className="w-11/12">Name: Julian Rivera</p>
+            <p className="w-11/12">Email: julian@gmail.com</p>
           </section>
         </>
       }
