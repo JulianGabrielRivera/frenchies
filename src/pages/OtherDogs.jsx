@@ -143,22 +143,24 @@ export const OtherDogs = ({ puppyArray }) => {
                   <img
                     id="carouselImage"
                     src={pup.img}
-                    className="rounded-md h-80 w-full   object-cover  "
+                    className="rounded-md h-80 sm:h-40 md:h-80   w-full    object-cover  "
                   ></img>
                   <h2 className="absolute top-2 left-2 font-bold">
                     {pup.name}
                   </h2>
-                  <p className="absolute top-64 left-2 font-bold">
+                  <p className="absolute top-64 sm:top-24 md:top-64 left-2 font-bold">
                     {pup.howOld}
                   </p>
 
-                  <p className="absolute top-72 left-2 font-bold">{pup.type}</p>
+                  <p className="absolute top-72 sm:top-32 md:top-72 left-2 font-bold">
+                    {pup.type}
+                  </p>
                 </article>
               </>
             );
           })}
-        <div className="rounded-md right-0 h-80  bg-customGreen w-36 md:w-44 lg:w-72 xl:w-96 absolute"></div>
-        <div className="rounded-md left-0 h-80  bg-customGreen w-36 md:w-44 lg:w-72 xl:w-96 absolute"></div>
+        <div className="rounded-md right-0 h-80 sm:h-40 md:h-80  bg-customGreen  w-36 md:w-44 lg:w-72 xl:w-96 absolute"></div>
+        <div className="rounded-md left-0 h-80 sm:h-40  md:h-80 bg-customGreen w-36 md:w-44 lg:w-72 xl:w-96 absolute"></div>
       </section>
     </>
   );
