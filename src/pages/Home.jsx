@@ -1,7 +1,7 @@
 import videoBg from "../assets/video/frenchie.mp4";
 import frenchImg from "../assets/images/fbpup.jpg";
 import womanImg from "../assets/images/woman.jpg";
-import zeusImg from "../assets/images/zeus2.png";
+import zeusImg from "../assets/images/Zeus.png";
 import stormImg from "../assets/images/Storm.png";
 import gaiaImg from "../assets/images/Gaia.png";
 import { library } from "@fortawesome/fontawesome-svg-core";

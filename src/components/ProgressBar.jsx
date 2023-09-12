@@ -1,4 +1,8 @@
 import { useState, useEffect } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBoltLightning } from "@fortawesome/free-solid-svg-icons";
+import { faBone } from "@fortawesome/free-solid-svg-icons";
+import { faPaw } from "@fortawesome/free-solid-svg-icons";
 
 export const ProgressBar = ({ pup }) => {
   const [filled, setFilled] = useState(0);
@@ -21,7 +25,12 @@ export const ProgressBar = ({ pup }) => {
           height: "100%",
           transition: "width 1.5s",
         }}
+        className="relative rounded-md"
       >
+        <FontAwesomeIcon
+          icon={faBoltLightning}
+          className="absolute top-0.5 left-1"
+        />
         {/* <p>Energy</p> */}
         <span
           style={{
@@ -30,9 +39,34 @@ export const ProgressBar = ({ pup }) => {
             justifyContent: "center",
             fontSize: "12px",
           }}
-          className="border-2 gap-3"
+          className="border-2 gap-3 rounded-md"
         >
-          <p className="w-3/5">Energy</p>
+          <p className="w-2/5">Energy</p>
+          {filled}%
+        </span>
+      </div>
+      <br />
+      <div
+        className="relative rounded-md "
+        style={{
+          width: `${filled}%`,
+          backgroundColor: "green",
+          height: "100%",
+          transition: "width 1.5s",
+        }}
+      >
+        {/* <p>Energy</p> */}
+        <FontAwesomeIcon icon={faBone} className="absolute top-0.5 left-1" />
+        <span
+          style={{
+            color: "white",
+            display: "flex",
+            justifyContent: "center",
+            fontSize: "12px",
+          }}
+          className="border-2 gap-3 rounded-md"
+        >
+          <p className="w-2/6">Size</p>
           {filled}%
         </span>
       </div>
@@ -44,8 +78,11 @@ export const ProgressBar = ({ pup }) => {
           height: "100%",
           transition: "width 1.5s",
         }}
+        className="relative rounded-md "
       >
         {/* <p>Energy</p> */}
+        <FontAwesomeIcon icon={faPaw} className="absolute top-0.5 left-1" />
+
         <span
           style={{
             color: "white",
@@ -53,32 +90,9 @@ export const ProgressBar = ({ pup }) => {
             justifyContent: "center",
             fontSize: "12px",
           }}
-          className="border-2 gap-3"
+          className="border-2 gap-3 rounded-md"
         >
-          <p className="w-3/5">Size</p>
-          {filled}%
-        </span>
-      </div>
-      <br />
-      <div
-        style={{
-          width: `${filled}%`,
-          backgroundColor: "green",
-          height: "100%",
-          transition: "width 1.5s",
-        }}
-      >
-        {/* <p>Energy</p> */}
-        <span
-          style={{
-            color: "white",
-            display: "flex",
-            justifyContent: "center",
-            fontSize: "12px",
-          }}
-          className="border-2 gap-3"
-        >
-          <p className="w-3/5">Trainable</p>
+          <p className="w-2/5">Trainable</p>
           {filled}%
         </span>
       </div>

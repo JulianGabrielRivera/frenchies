@@ -1,0 +1,23 @@
+[
+    {
+      name: "Zeus",
+      type: "French Bulldog",
+      howOld: "15 weeks",
+      img: zeusImg,
+      id: 0,
+    },
+    {
+      name: "Gaia",
+      type: "French Bulldog",
+      howOld: "15 weeks",
+      img: gaiaImg,
+      id: 1,
+    },
+    {
+      name: "Storm",
+      type: "French Bulldog",
+      howOld: "15 weeks",
+      img: stormImg,
+      id: 2,
+    },
+  ];

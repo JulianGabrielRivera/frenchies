@@ -1,12 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import zeusImg from "../assets/images/zeus2.png";
+import zeusImg from "../assets/images/Zeus.png";
 import stormImg from "../assets/images/Storm.png";
 import gaiaImg from "../assets/images/Gaia.png";
 import { ScrollContext } from "../context/scrollDown.context.jsx";
 import { useState, useRef, useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
 import { ProgressBar } from "../components/ProgressBar";
+import { OtherDogs } from "./OtherDogs";
+
 export const PuppyDetails = () => {
   const [differentImage, setDifferentImage] = useState("");
   const { scrollRef, navClick } = useContext(ScrollContext);
@@ -38,6 +40,18 @@ export const PuppyDetails = () => {
     },
   ];
   const changeImage = (image) => {
+    console.log(image.slice(19));
+    const arr = [];
+    const yo = puppyArray.forEach((pup) => {
+      if (image.includes(pup.name)) {
+        console.log("hi");
+        arr.push(pup);
+        console.log(arr);
+        setPup(arr);
+      }
+    });
+    console.log(yo);
+
     setDifferentImage(image);
   };
 
@@ -70,7 +84,7 @@ export const PuppyDetails = () => {
       {
         <>
           <div className="flex flex-col justify-around mt-10 items-center">
-            <div className="flex flex-col lg:flex-row text-white justify-between md:justify-around w-11/12 mt-8">
+            <div className="flex flex-col lg:flex-row text-white justify-between  w-11/12 mt-8">
               <div className="flex flex-col-reverse md:flex-row justify-center gap-3 lg:visible">
                 <div className="flex md:flex-col gap-2 lg:visible">
                   <img
@@ -110,8 +124,8 @@ export const PuppyDetails = () => {
                   //   style={{ height: "450px", width: "95vw" }}
                 />
               </div>
-
-              <section className="flex flex-col w-5/5 md:mt-10 lg:mt-0 gap-3 lg:mx-5">
+              <p className="md:hidden">See other similar dogs</p>
+              <section className="flex flex-col w-5/5 md:mt-10 lg:mt-0 gap-3 lg:mx-5 lg:w-80 xl:w-2/5">
                 <p className=" text-3xl mt-10 sm:text-left  ">
                   {pup && pup[0].name}
                 </p>
@@ -162,12 +176,26 @@ export const PuppyDetails = () => {
             <p className="text-2xl w-11/12">Personality Traits of Zeus</p>
             {pup && <ProgressBar pup={pup} />}
           </section>
+          <hr className="mt-10 ml-5 mr-5" />
 
           <section className="mt-10 flex flex-col justify-center items-center text-white ">
             <h1 className="text-2xl text-white w-11/12">Contact Me</h1>
             <p className="w-11/12">Name: Julian Rivera</p>
             <p className="w-11/12">Email: julian@gmail.com</p>
           </section>
+
+          <hr className="mt-10 ml-5 mr-5" />
+
+          {/* <div className="flex flex-col w-screen justify-center">
+            <h1 className="text-left">Available French Bulldgs</h1>
+          </div> */}
+
+          <OtherDogs puppyArray={puppyArray} />
+          <footer className="mt-10">
+            <button className="w-screen text-center h-16 bg-customGreen rounded-md sticky text-white">
+              Take me Home
+            </button>
+          </footer>
         </>
       }
     </>
