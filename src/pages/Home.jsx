@@ -4,6 +4,7 @@ import womanImg from "../assets/images/woman.jpg";
 import zeusImg from "../assets/images/Zeus.png";
 import stormImg from "../assets/images/Storm.png";
 import gaiaImg from "../assets/images/Gaia.png";
+import frenchieBlack from "../assets/images/frenchieblack.jpeg";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faSquareCaretDown } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -91,9 +92,15 @@ export const Home = () => {
     <>
       <div className="h-screen w-full ">
         <div className="relative">
-          <div className="video-container">
-            <video src={videoBg} autoPlay loop muted className="relative" />
-          </div>
+          <video
+            src={videoBg}
+            autoPlay
+            loop
+            muted
+            className="relative hideit"
+          />
+          <img src={frenchieBlack} alt="" className="w-full frenchieblack" />
+
           <h1 className="absolute bottom-0 right-4 text-white font-bold text-xl">
             Frenchies
           </h1>
