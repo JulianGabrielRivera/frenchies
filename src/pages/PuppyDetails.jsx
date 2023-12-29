@@ -193,7 +193,7 @@ export const PuppyDetails = () => {
           <OtherDogs puppyArray={puppyArray} />
           <footer className="mt-10">
             <button className="w-screen text-center h-16 bg-customGreen rounded-md sticky text-white">
-              Take me Home
+              <Link to={`/`}>Take me Home</Link>
             </button>
           </footer>
         </>
