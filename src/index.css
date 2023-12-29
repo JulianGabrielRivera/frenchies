@@ -31,6 +31,13 @@ video {
 #carouselImage {
   clip-path: inset(0px 0px 0px 0px); /* or "none" */
 }
+/* Hide the play button on mobile devices */
+@media only screen and (max-width: 600px) {
+  .video-container video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+  }
+}
+
 /* img {
   height: 200px;
   width: 60%;

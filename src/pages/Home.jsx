@@ -91,7 +91,9 @@ export const Home = () => {
     <>
       <div className="h-screen w-full ">
         <div className="relative">
-          <video src={videoBg} autoPlay loop muted className="relative" />
+          <div className="video-container">
+            <video src={videoBg} autoPlay loop muted className="relative" />
+          </div>
           <h1 className="absolute bottom-0 right-4 text-white font-bold text-xl">
             Frenchies
           </h1>

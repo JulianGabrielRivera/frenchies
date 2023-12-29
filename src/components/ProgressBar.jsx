@@ -9,11 +9,12 @@ export const ProgressBar = ({ pup }) => {
   const [pupName, setPupName] = useState("");
 
   useEffect(() => {
+    setFilled(0);
     // setPupName(pup.name)
-    if (pup[0].name === "Zeus") {
-      console.log("true");
-      setFilled((prevFilled) => prevFilled + 40);
-    }
+    // if (pup[0].name === "Zeus") {
+    //   console.log("true");
+    setFilled((prevFilled) => prevFilled + 40);
+    // }
   }, [pup]);
 
   return (
